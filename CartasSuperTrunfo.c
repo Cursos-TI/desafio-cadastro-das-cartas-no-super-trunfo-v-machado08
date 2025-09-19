@@ -15,8 +15,8 @@ int main() {
     int população2, np2, codigo2;
     float area1, pib1; //Variáveis ponto flutuante da cidade 1 
     float area2, pib2;
-    float pibper1, pibper2;
-    float densidade1, densidade2;
+    float pibper1, pibper2; //Variáveis de pib per capita das duas cidades
+    float densidade1, densidade2; // Variáveis de densidade populacional das duas cidades
 
     
     printf ("Digite o código da cidade 1: "); 
@@ -75,27 +75,27 @@ int main() {
         scanf("%f", &pib2);
 
 
-    pibper1 =(float) pib1 / população1;
-    pibper2 =(float) pib2 / população2;
+    pibper1 =(float) pib1 / população1; // leva os dois valor para ponto flutuante
+    pibper2 =(float) pib2 / população2; // leva os dois valor para ponto flutuante
     
-    densidade1 =(float) população1 / area1;
-    densidade2 =(float) população2 / area2;
+    densidade1 =(float) população1 / area1; // leva os dois valor para ponto flutuante
+    densidade2 =(float) população2 / area2; // leva os dois valor para ponto flutuante
 
 //os comandos abaixo imprimem as informaçoes da cidade 1
     printf("Cidade1\n");
     printf("Nome da cidade: %s\n", nome1);
     printf("Quantidade de habitantes: %d\nNúmero de pontos turísticos: %d\nCódigo: %d\n", população1, np1, codigo1);
     printf("Área: %.2f\nPIB: %.2f\n", area1, pib1);
-    printf("O pib per capita é: %2.f\n", pibper1);
-    printf("A densidade populacional é: %2.f\n", densidade1);
+    printf("O pib per capita é: %.2f\n", pibper1);
+    printf("A densidade populacional é: %.2f\n", densidade1);
 
 //os comandos abaixo imprimem as informaçoes da cidade 2 na tela
     printf("Cidade2\n");
     printf("Nome da cidade: %s\n", nome2);
     printf("Quantidade de habitantes: %d\nNúmero de pontos turísticos: %d\nCódigo: %d\n", população2, np2, codigo2);
     printf("Área: %.2f\nPIB: %.2f\n", area2, pib2);
-    printf("O pib per capita é: %2.f\n", pibper2);
-    printf("A densidade populacional é: %2.f\n", densidade2);
+    printf("O pib per capita é: %.2f\n", pibper2);
+    printf("A densidade populacional é: %.2f\n", densidade2);
 
     return 0;
 
