@@ -1,4 +1,4 @@
-#include <stdio.h>
+ #include <stdio.h>
 
 // Desafio Super Trunfo - Países
 // Tema 1 - Cadastro das Cartas
@@ -17,6 +17,7 @@ int main() {
     float area2, pib2;
     float pibper1, pibper2; //Variáveis de pib per capita das duas cidades
     float densidade1, densidade2; // Variáveis de densidade populacional das duas cidades
+    float superpoder1, superpoder2;
 
     
     printf ("Digite o código da cidade 1: "); 
@@ -73,29 +74,50 @@ int main() {
 
     printf ("Digite o PIB 2: "); //Solicita o valor do PIB da Segunda cidade
         scanf("%f", &pib2);
+        
 
+    pibper1 =(double) pib1 / população1; // leva os dois valor para ponto flutuante
+    pibper2 =(double) pib2 / população2; // leva os dois valor para ponto flutuante
 
-    pibper1 =(float) pib1 / população1; // leva os dois valor para ponto flutuante
-    pibper2 =(float) pib2 / população2; // leva os dois valor para ponto flutuante
-    
+  
     densidade1 =(float) população1 / area1; // leva os dois valor para ponto flutuante
     densidade2 =(float) população2 / area2; // leva os dois valor para ponto flutuante
+    
+    // os comandos abaixo fazem com que a variável superpoder1 e superpoder2 tenham o valor da soma de todos os dados de suas respectivas cartas
+    superpoder1 = (float) população1 + area1 + pib1 + np1 + densidade1 + pibper1;
+    superpoder2 = (float) população2 + area2 + pib2 + np2 + densidade2 + pibper2;
 
 //os comandos abaixo imprimem as informaçoes da cidade 1
-    printf("Cidade1\n");
+    printf("************ Dados da Cidade1************\n");
     printf("Nome da cidade: %s\n", nome1);
     printf("Quantidade de habitantes: %d\nNúmero de pontos turísticos: %d\nCódigo: %d\n", população1, np1, codigo1);
-    printf("Área: %.2f\nPIB: %.2f\n", area1, pib1);
-    printf("O pib per capita é: %.2f\n", pibper1);
+    printf("Área: %.2f Km²\nPIB: %.2f\n", area1, pib1);
+    printf("O pib per capita é: %lf\n", pibper1);
     printf("A densidade populacional é: %.2f\n", densidade1);
+    printf("O Super Poder é: %.2f\n", superpoder1);
 
 //os comandos abaixo imprimem as informaçoes da cidade 2 na tela
-    printf("Cidade2\n");
+    printf("************ Dados da Cidade2 ************\n");
     printf("Nome da cidade: %s\n", nome2);
     printf("Quantidade de habitantes: %d\nNúmero de pontos turísticos: %d\nCódigo: %d\n", população2, np2, codigo2);
-    printf("Área: %.2f\nPIB: %.2f\n", area2, pib2);
-    printf("O pib per capita é: %.2f\n", pibper2);
+    printf("Área: %.2f Km²\nPIB: %.2f\n", area2, pib2);
+    printf("o pib per capita é: %lf\n", pibper2);
     printf("A densidade populacional é: %.2f\n", densidade2);
+    printf("O Super Poder é: %.2f\n", superpoder2);
+
+
+    // Os comandos abaixo fazem as comparações das cartas 
+
+    printf("***Comparativo de cartas !!!*** \nCarta 1 será (1) e carta 2 será (0)\n");
+    printf("A população é vencedora é: %d\n", (população1 > população2));
+    printf("A área vencedora é: %d\n", (area1 > area2));
+    printf("O PIB vencedor é: %d\n", pib1 > pib2);
+    printf("A cidade com mais pontos turísticos é: %d\n", (np1 > np2));
+    printf("A densidade populacional vencedora é: %d\n", (densidade1 < densidade2));
+    printf("O PIB per Capita vencedor é: %d\n", (pibper1 > pibper2));
+    printf("A carta com o maior super poder é: %d\n", (superpoder1 > superpoder2));
+    
+
 
     return 0;
 

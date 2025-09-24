@@ -1,0 +1,17 @@
+    #include <stdio.h>
+
+int main () {
+    int população1, np1, codigo1; //Variáveis inteiras (População, pontos turísticos e código da cidade.)
+    int população2, np2, codigo2;
+    float area1, pib1; //Variáveis ponto flutuante da cidade 1 
+    float area2, pib2;
+    float pibper1, pibper2; //Variáveis de pib per capita das duas cidades
+    float densidade1, densidade2; // Variáveis de densidade populacional das duas cidades
+
+    pibper1 =(float) pib1 / população1; // leva os dois valor para ponto flutuante
+    printf("%.2f\n", pibper1);
+    pibper2 =(float) pib2 / população2; // leva os dois valor para ponto flutuante
+    printf ("%.2f\n", pibper2);
+
+    return 0;
+    }
