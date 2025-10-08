@@ -13,6 +13,7 @@ int main() {
     char estado2[50];
     int população1, np1, codigo1; //Variáveis inteiras (População, pontos turísticos e código da cidade.)
     int população2, np2, codigo2;
+    int atributo;
     float area1, pib1; //Variáveis ponto flutuante da cidade 1 
     float area2, pib2;
     float pibper1, pibper2; //Variáveis de pib per capita das duas cidades
@@ -105,60 +106,102 @@ int main() {
     printf("A densidade populacional é: %.2f\n", densidade2);
     printf("O Super Poder é: %.2f\n", superpoder2);
 
+// Os comandos abaixo solicitam ao usuário para que escolha o atrbuto 
+    printf("!!! * Escolha o atributo que será feita a comparação entre as Cartas *!!!\n");
+    printf("1. População\n");
+    printf("2. Área\n");
+    printf("3. PIB\n");
+    printf("4. Número de pontos Turísticos\n");
+    printf("5. Densidade Populacional\n");
+    printf("6. Densidade Populacional\n");
+    printf("7. Super Poder\n");
+    scanf("%d", &atributo);
 
-    // Os comandos abaixo fazem as comparações das cartas 
+//Os comandos abaixo fazem as comparaçoes entre os atributos e impirmem a comparação que usuario escolher
+    switch (atributo)
+   {
+    case 1:
     
-    // Fará o comparativo de população entre as cartas
-    printf("***Comparativo de cartas !!!*** \n");
     if(população1 > população2){ //condição que foi imposta
         printf("A população da carta 1 venceu\n");//mensagem em caso de verdadeiro
-    } else{
-        printf("A população da carta 2 venceu\n");
+    } else if (população1 == população2) {
+        printf("Houve um empate na população das cartas\n");
+    }else{
+         printf("A população da carta 2 venceu\n");
     }
+    break;
     
-    //Fará o comparativo da area entre as cartas
+   
+    case 2:
+
     if(area1 > area2){//condição que foi imposta
         printf("A área da carta 1 venceu\n");//mensagem em caso de verdadeiro
-    } else{
+    } else if (area1 == area2){
+        printf("Houve um empate na área das cartas\n");//mensagem em caso de falso
+    }else {
         printf("A área da carta 2 venceu\n");//mensagem em caso de falso
     }
+    break;
+ 
 
-    //Fará o comparativo do pib das duas cartas
+    case 3:
     if( pib1 > pib2){//condição que foi imposta
         printf("O PIB da carta 1 venceu\n");//mensagem em caso de verdadeiro
-    }else{
+    }else if ( pib1 == pib2){
+        printf("Houve um empate no PIB das cartas\n");//mensagem em caso de empate
+    }else {
         printf("O PIB da carta 2 venceu\n");//mensagem em caso de falso
     }
+    break;  
+  
 
-    //Fará o comparativo entre o número de pontos turísticos das cartas
+    case 4:
     if(np1 > np2){//condição que foi imposta
         printf("A carta 1 possui mais pontos turísticos\n");//mensagem em caso de verdadeiro
+    }else if ( np1 == np2){
+        printf("Houve um empate no número de pontos turísticos\n");//mensagem em caso de empate
     }else{
-        printf("A carta 2 possui mais pontos turísticos\n");//mensagem em caso de falso
+         printf("A carta 2 possui mais pontos turísticos\n");//mensagem em caso de falso
     }
+    break;
 
-    //Fará o comparativo de densidade entre as cartas
+
+    case 5:
     if(densidade1 < densidade2){//condição que foi imposta
         printf("A densidade da carta 1 venceu\n");//mensagem em caso de verdadeiro
-    }else{
+    }else if (densidade1 == densidade2){
+        printf("Houve um empate na densidade das cartas\n");//mensagem em caso de empate
+    }else {
         printf("A densidade da carta 2 venceu\n");//mensagem em caso de falso
     }
+    break;
 
-    //Fará o comparativo do PIB per Capita entre as cartas
+
+    case 6:
     if(pibper1 > pibper2){//condição que foi imposta
         printf("A carta 1 tem o maior PIB per Capita\n");//mensagem em caso de verdadeiro
-    }else{
+    }else if (pibper1 == pibper2){
+        printf("Houve um empate no PIB per Capita das cartas\n");//mensagem em caso de empate
+    }else {
         printf("A carta 2 tem o maior PIB per Capita\n");//mensagem em caso de falso
     }
+    break;
 
-    //Fará o comparativo entre os super poderes das cartas
+    case 7:
     if(superpoder1 > superpoder2){//condição que foi imposta
         printf("A carta 1 tem o maior Super poder!!!\n");//mensagem em caso de verdadeiro
-    }else{
+    }else if (superpoder1 == superpoder2){
+        printf("Houve um empate no Super poder!!!\n");//mensagem em caso de empate
+    }else {
         printf("A carta 2 tem o maior Super poder!!!\n");//mensagem em caso de falso
-    }
-    
 
+    }
+    break;
+
+    default://Irá ser executada caso o usuário utilize um número diferente das opçoes
+    printf("Opção Inválida");
+    }
+       
 
     return 0;
 
