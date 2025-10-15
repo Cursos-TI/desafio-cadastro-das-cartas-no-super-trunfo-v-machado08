@@ -19,6 +19,9 @@ int main() {
     float pibper1, pibper2; //Variáveis de pib per capita das duas cidades
     float densidade1, densidade2; // Variáveis de densidade populacional das duas cidades
     float superpoder1, superpoder2;
+    float somaAtributo1 = 0.0;
+    float somaAtributo2 = 0.0;
+
 
     
     printf ("Digite o código da cidade 1: "); 
@@ -105,6 +108,7 @@ int main() {
     printf("o pib per capita é: %lf\n", pibper2);
     printf("A densidade populacional é: %.2f\n", densidade2);
     printf("O Super Poder é: %.2f\n", superpoder2);
+    
 
 // Os comandos abaixo solicitam ao usuário para que escolha o atrbuto 
     printf("!!! * Escolha o atributo que será feita a comparação entre as Cartas *!!!\n");
@@ -121,6 +125,8 @@ int main() {
     switch (atributo1)
    {
     case 1: //CASO ESCOLHA POPULAÇÃO
+    somaAtributo1 += (float)população1;
+    somaAtributo2 += (float)população2;
     
     if(população1 > população2){ //condição que foi imposta
         printf("A população da carta 1 venceu\n");//mensagem em caso de verdadeiro
@@ -225,6 +231,8 @@ int main() {
     }else {
         printf("A área da carta 2 venceu\n");//mensagem em caso de falso
     }
+    somaAtributo1 += area1;
+    somaAtributo2 += area2;
 
      //Solicita que o usuário escolhe o segundo atributo e exclui o atributo Área 
     printf("!!! * Escolha o segundo atributo que será feita a comparação entre as Cartas *!!!\n");
@@ -239,6 +247,8 @@ int main() {
         switch (atributo2){
 
          case 1:
+        somaAtributo1 += (float)população1;
+        somaAtributo2 += (float)população2;
     
         if(população1 > população2){ //condição que foi imposta
         printf("A população da carta 1 venceu\n");//mensagem em caso de verdadeiro
@@ -299,7 +309,6 @@ int main() {
         printf("Houve um empate no Super poder!!!\n");//mensagem em caso de empate
         }else {
         printf("A carta 2 tem o maior Super poder!!!\n");//mensagem em caso de falso
-
         }
         break;
 
@@ -317,7 +326,10 @@ int main() {
     }else {
         printf("O PIB da carta 2 venceu\n");//mensagem em caso de falso
     }
-    
+
+    somaAtributo1 += pib1;
+    somaAtributo2 += pib2;
+
      //Solicita que o usuário escolhe o segundo atributo e exclui o atributo PIB 
     printf("!!! * Escolha o segundo atributo que será feita a comparação entre as Cartas *!!!\n");
     printf("1. População\n");
@@ -331,6 +343,8 @@ int main() {
         switch (atributo2){
 
          case 1:
+        somaAtributo1 += (float)população1;
+        somaAtributo2 += (float)população2;
     
         if(população1 > população2){ //condição que foi imposta
         printf("A população da carta 1 venceu\n");//mensagem em caso de verdadeiro
@@ -342,6 +356,8 @@ int main() {
          break;
 
          case 2:
+        somaAtributo1 += (float)area1;
+        somaAtributo2 += (float)area2;
 
         if(area1 > area2){//condição que foi imposta
         printf("A área da carta 1 venceu\n");//mensagem em caso de verdadeiro
@@ -354,6 +370,9 @@ int main() {
 
         
         case 3:
+        somaAtributo1 += (float)np1;
+        somaAtributo2 += (float)np2;
+
         if(np1 > np2){//condição que foi imposta
         printf("A carta 1 possui mais pontos turísticos\n");//mensagem em caso de verdadeiro
         }else if ( np1 == np2){
@@ -364,6 +383,9 @@ int main() {
         break;
 
          case 4:
+        somaAtributo1 += (float)densidade1;
+        somaAtributo2 += (float)densidade2;
+
         if(densidade1 < densidade2){//condição que foi imposta
         printf("A densidade da carta 1 venceu\n");//mensagem em caso de verdadeiro
         }else if (densidade1 == densidade2){
@@ -374,6 +396,9 @@ int main() {
          break;
 
          case 5:
+        somaAtributo1 += (float)pibper1;
+        somaAtributo2 += (float)pibper2;
+
         if(pibper1 > pibper2){//condição que foi imposta
         printf("A carta 1 tem o maior PIB per Capita\n");//mensagem em caso de verdadeiro
         }else if (pibper1 == pibper2){
@@ -384,6 +409,9 @@ int main() {
         break;
 
         case 6:
+        somaAtributo1 += (float)superpoder1;
+        somaAtributo2 += (float)superpoder2;
+
         if(superpoder1 > superpoder2){//condição que foi imposta
         printf("A carta 1 tem o maior Super poder!!!\n");//mensagem em caso de verdadeiro
         }else if (superpoder1 == superpoder2){
@@ -410,6 +438,9 @@ int main() {
          printf("A carta 2 possui mais pontos turísticos\n");//mensagem em caso de falso
     }
 
+     somaAtributo1 += np1;
+     somaAtributo2 += np2;
+
      //Solicita que o usuário escolhe o segundo atributo e exclui o atributo PONTOS TURÍSTICOS 
     printf("!!! * Escolha o segundo atributo que será feita a comparação entre as Cartas *!!!\n");
     printf("1. População\n");
@@ -423,6 +454,8 @@ int main() {
         switch (atributo2){
 
          case 1:
+        somaAtributo1 += (float)população1;
+        somaAtributo2 += (float)população2;
     
         if(população1 > população2){ //condição que foi imposta
         printf("A população da carta 1 venceu\n");//mensagem em caso de verdadeiro
@@ -434,6 +467,8 @@ int main() {
          break;
 
          case 2:
+        somaAtributo1 += (float)area1;
+        somaAtributo2 += (float)area2;
 
         if(area1 > area2){//condição que foi imposta
         printf("A área da carta 1 venceu\n");//mensagem em caso de verdadeiro
@@ -446,6 +481,8 @@ int main() {
 
         
         case 3:
+        somaAtributo1 += (float)pib1;
+        somaAtributo2 += (float)pib2;
 
         if( pib1 > pib2){//condição que foi imposta
         printf("O PIB da carta 1 venceu\n");//mensagem em caso de verdadeiro
@@ -467,6 +504,9 @@ int main() {
          break;
 
          case 5:
+        somaAtributo1 += (float)pibper1;
+        somaAtributo2 += (float)pibper2;
+
         if(pibper1 > pibper2){//condição que foi imposta
         printf("A carta 1 tem o maior PIB per Capita\n");//mensagem em caso de verdadeiro
         }else if (pibper1 == pibper2){
@@ -477,6 +517,9 @@ int main() {
         break;
 
         case 6:
+        somaAtributo1 += (float)superpoder1;
+        somaAtributo2 += (float)superpoder2;
+
         if(superpoder1 > superpoder2){//condição que foi imposta
         printf("A carta 1 tem o maior Super poder!!!\n");//mensagem em caso de verdadeiro
         }else if (superpoder1 == superpoder2){
@@ -502,6 +545,10 @@ int main() {
     }else {
         printf("A densidade da carta 2 venceu\n");//mensagem em caso de falso
     }
+
+    somaAtributo1 += densidade1;
+    somaAtributo2 += densidade2;
+
     //Solicita que o usuário escolhe o segundo atributo e exclui o atributo Densidade Populacional 
     printf("!!! * Escolha o segundo atributo que será feita a comparação entre as Cartas *!!!\n");
     printf("1. População\n");
@@ -515,6 +562,8 @@ int main() {
         switch (atributo2){
 
          case 1:
+        somaAtributo1 += (float)população1;
+        somaAtributo2 += (float)população2;
     
         if(população1 > população2){ //condição que foi imposta
         printf("A população da carta 1 venceu\n");//mensagem em caso de verdadeiro
@@ -526,6 +575,8 @@ int main() {
          break;
 
          case 2:
+        somaAtributo1 += (float)area1;
+        somaAtributo2 += (float)area2;
 
         if(area1 > area2){//condição que foi imposta
         printf("A área da carta 1 venceu\n");//mensagem em caso de verdadeiro
@@ -538,6 +589,8 @@ int main() {
 
         
         case 3:
+        somaAtributo1 += (float)pib1;
+        somaAtributo2 += (float)pib2;
         
         if( pib1 > pib2){//condição que foi imposta
         printf("O PIB da carta 1 venceu\n");//mensagem em caso de verdadeiro
@@ -549,6 +602,8 @@ int main() {
         break;
 
          case 4:
+        somaAtributo1 += (float)np1;
+        somaAtributo2 += (float)np2;
 
         if(np1 > np2){//condição que foi imposta
         printf("A carta 1 possui mais pontos turísticos\n");//mensagem em caso de verdadeiro
@@ -560,6 +615,9 @@ int main() {
          break;
 
          case 5:
+        somaAtributo1 += (float)pibper1;
+        somaAtributo2 += (float)pibper2;
+
         if(pibper1 > pibper2){//condição que foi imposta
         printf("A carta 1 tem o maior PIB per Capita\n");//mensagem em caso de verdadeiro
         }else if (pibper1 == pibper2){
@@ -570,6 +628,8 @@ int main() {
         break;
 
         case 6:
+        somaAtributo1 += (float)superpoder1;
+        somaAtributo2 += (float)superpoder2;
 
         if(superpoder1 > superpoder2){//condição que foi imposta
         printf("A carta 1 tem o maior Super poder!!!\n");//mensagem em caso de verdadeiro
@@ -595,6 +655,9 @@ int main() {
     }else {
         printf("A carta 2 tem o maior PIB per Capita\n");//mensagem em caso de falso
     }
+
+    somaAtributo1 += pibper1;
+    somaAtributo2 += pibper2;
     
     //Solicita que o usuário escolhe o segundo atributo e exclui o atributo PIB PER CAPITA 
     printf("!!! * Escolha o segundo atributo que será feita a comparação entre as Cartas *!!!\n");
@@ -609,6 +672,8 @@ int main() {
         switch (atributo2){
 
          case 1:
+        somaAtributo1 += (float)população1;
+        somaAtributo2 += (float)população2;
     
         if(população1 > população2){ //condição que foi imposta
         printf("A população da carta 1 venceu\n");//mensagem em caso de verdadeiro
@@ -620,6 +685,8 @@ int main() {
          break;
 
          case 2:
+        somaAtributo1 += (float)area1;
+        somaAtributo2 += (float)area2;
 
         if(area1 > area2){//condição que foi imposta
         printf("A área da carta 1 venceu\n");//mensagem em caso de verdadeiro
@@ -632,6 +699,8 @@ int main() {
 
         
         case 3:
+        somaAtributo1 += (float)pib1;
+        somaAtributo2 += (float)pib2;
         
         if( pib1 > pib2){//condição que foi imposta
         printf("O PIB da carta 1 venceu\n");//mensagem em caso de verdadeiro
@@ -643,6 +712,8 @@ int main() {
         break;
 
          case 4:
+        somaAtributo1 += (float)np1;
+        somaAtributo2 += (float)np2;
 
         if(np1 > np2){//condição que foi imposta
         printf("A carta 1 possui mais pontos turísticos\n");//mensagem em caso de verdadeiro
@@ -654,6 +725,9 @@ int main() {
          break;
 
          case 5:
+        somaAtributo1 += (float)densidade1;
+        somaAtributo2 += (float)densidade2;
+
         if(densidade1 < densidade2){//condição que foi imposta
         printf("A densidade da carta 1 venceu\n");//mensagem em caso de verdadeiro
         }else if (densidade1 == densidade2){
@@ -664,6 +738,9 @@ int main() {
         break;
 
         case 6:
+        somaAtributo1 += (float)superpoder1;
+        somaAtributo2 += (float)superpoder2;
+
 
         if(superpoder1 > superpoder2){//condição que foi imposta
         printf("A carta 1 tem o maior Super poder!!!\n");//mensagem em caso de verdadeiro
@@ -689,6 +766,9 @@ int main() {
         printf("A carta 2 tem o maior Super poder!!!\n");//mensagem em caso de falso
 
     }
+
+    somaAtributo1 += superpoder1;
+    somaAtributo2 += superpoder2;
     
     //Solicita que o usuário escolhe o segundo atributo e exclui o atributo SUPER PODER 
     printf("!!! * Escolha o segundo atributo que será feita a comparação entre as Cartas *!!!\n");
@@ -703,7 +783,8 @@ int main() {
         switch (atributo2){
 
          case 1:
-    
+        somaAtributo1 += (float)população1;
+        somaAtributo2 += (float)população2;
         if(população1 > população2){ //condição que foi imposta
         printf("A população da carta 1 venceu\n");//mensagem em caso de verdadeiro
         } else if (população1 == população2) {
@@ -714,6 +795,8 @@ int main() {
          break;
 
          case 2:
+        somaAtributo1 += (float)area1;
+        somaAtributo2 += (float)area2;
 
         if(area1 > area2){//condição que foi imposta
         printf("A área da carta 1 venceu\n");//mensagem em caso de verdadeiro
@@ -726,6 +809,8 @@ int main() {
 
         
         case 3:
+        somaAtributo1 += (float)pib1;
+        somaAtributo2 += (float)pib2;
         
         if( pib1 > pib2){//condição que foi imposta
         printf("O PIB da carta 1 venceu\n");//mensagem em caso de verdadeiro
@@ -737,6 +822,8 @@ int main() {
         break;
 
          case 4:
+        somaAtributo1 += (float)np1;
+        somaAtributo2 += (float)np2;
 
         if(np1 > np2){//condição que foi imposta
         printf("A carta 1 possui mais pontos turísticos\n");//mensagem em caso de verdadeiro
@@ -748,6 +835,9 @@ int main() {
          break;
 
          case 5:
+        somaAtributo1 += (float)densidade1;
+        somaAtributo2 += (float)densidade2;
+
         if(densidade1 < densidade2){//condição que foi imposta
         printf("A densidade da carta 1 venceu\n");//mensagem em caso de verdadeiro
         }else if (densidade1 == densidade2){
@@ -758,6 +848,8 @@ int main() {
         break;
 
         case 6:
+        somaAtributo1 += (float)pibper1;
+        somaAtributo2 += (float)pibper2;
 
         if(pibper1 > pibper2){//condição que foi imposta
         printf("A carta 1 tem o maior PIB per Capita\n");//mensagem em caso de verdadeiro
@@ -776,6 +868,17 @@ int main() {
     default:
     printf("Opção Inválida");
     }
+
+    printf("********** Resultado final do comparativo entre as cartas**********\n");// Fará o comparativo entre a soma do dois atributos selecionados
+
+    if (somaAtributo1 > somaAtributo2) {
+        printf("VENCEDOR: A carta 1 tem a maior soma dos atributos e é a campeã !!!!!\n");
+    } else if (somaAtributo2 > somaAtributo1) {
+        printf("VENCEDOR: A carta 2 tem a maior soma dos atributos e é a campeã !!!!!\n");
+    } else {
+        printf("Houve um empate no confronto das cartas !!!\n");
+    }
+
        
 
     return 0;
